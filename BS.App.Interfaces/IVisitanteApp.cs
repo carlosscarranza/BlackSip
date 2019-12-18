@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using BS.Domain;
 
 namespace BS.App.Interfaces
@@ -9,6 +10,7 @@ namespace BS.App.Interfaces
 
         List<Visitante> GetVisitantesProcesados();
 
+        void ProcessVisitors();
 
     }
 }

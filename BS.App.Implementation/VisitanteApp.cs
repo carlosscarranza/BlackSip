@@ -19,5 +19,10 @@ namespace BS.App.Implementation
         {
             return UnitOfWork.I.VisitanteRepository.Filter(x => x.Procesado == true).ToList();
         }
+
+        public void ProcessVisitors()
+        {
+            UnitOfWork.I.VisitanteRepository.SqlQuery("EXECUTE dbo.SPGETVISITANTESPROCESADOS");
+        }
     }
 }

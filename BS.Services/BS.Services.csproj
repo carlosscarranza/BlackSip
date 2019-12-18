@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BS.App.Implementation\BS.App.Implementation.csproj" />
     <ProjectReference Include="..\BS.App.Interfaces\BS.App.Interfaces.csproj" />
+    <ProjectReference Include="..\BS.Utilities\BS.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

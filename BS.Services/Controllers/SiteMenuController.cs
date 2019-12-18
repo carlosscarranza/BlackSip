@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using BS.App.Interfaces;
+﻿using BS.App.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BS.Services.Controllers
