@@ -16,4 +16,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BS.App.Implementation\BS.App.Implementation.csproj" />
+    <ProjectReference Include="..\BS.App.Interfaces\BS.App.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

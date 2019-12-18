@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-//using BS.App.Interfaces;
-//using BS.Domain;
+using BS.App.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BS.Services.Controllers
@@ -10,25 +9,17 @@ namespace BS.Services.Controllers
     [ApiController]
     public class SiteMenuController : ControllerBase
     {
-        //private readonly ISiteMenuApp _siteMenuApp;
+        private readonly ISiteMenuApp _siteMenuApp;
 
-        //public SiteMenuController(ISiteMenuApp siteMenuApp)
-        //{
-        //    _siteMenuApp = siteMenuApp;
-        //}
+        public SiteMenuController(ISiteMenuApp siteMenuApp)
+        {
+            _siteMenuApp = siteMenuApp;
+        }
 
         [HttpGet]
         public JsonResult GetMenu()
         {
-            //using (BlackSipContext db = new BlackSipContext())
-            //{
-            //    var lst = (from d in db.SiteMenu
-            //        select d).ToList();
-
-            //    return new JsonResult(lst);
-            //}
-
-            return null;
+            return new JsonResult(_siteMenuApp.GetMenu());
         }
     }
 }

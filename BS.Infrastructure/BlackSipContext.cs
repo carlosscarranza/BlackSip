@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BS.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace BS.Infrastructure
 {

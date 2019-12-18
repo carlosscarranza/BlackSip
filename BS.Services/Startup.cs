@@ -1,13 +1,12 @@
 ﻿using System;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-//using BS.App.Implementation;
-//using BS.App.Interfaces;
-//using BS.Infrastructure;
+using BS.App.Implementation;
+using BS.App.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -40,8 +39,8 @@ namespace BS.Services
             var containerBuilder = new ContainerBuilder();
 
             //Register your own services within Auto-fac
-            //containerBuilder.RegisterType<VisitanteApp>().As<IVisitanteApp>();
-            //containerBuilder.RegisterType<SiteMenuApp>().As<ISiteMenuApp>();
+            containerBuilder.RegisterType<VisitanteApp>().As<IVisitanteApp>();
+            containerBuilder.RegisterType<SiteMenuApp>().As<ISiteMenuApp>();
 
             //Put the framework services into Auto-fac
             containerBuilder.Populate(services);

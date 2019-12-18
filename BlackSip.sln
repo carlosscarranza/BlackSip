@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Infraestructure", "5. In
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Utilities", "6. Utilities", "{E0230FC5-FCBF-4E07-B36B-A91A645DB1C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS.Services", "BS.Services\BS.Services.csproj", "{53E4050E-09C4-4794-A018-AFA9EF49AC43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BS.Services", "BS.Services\BS.Services.csproj", "{53E4050E-09C4-4794-A018-AFA9EF49AC43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS.Infrastructure", "BS.Infrastructure\BS.Infrastructure.csproj", "{DEBDAAF2-4836-4DF5-91A9-12FB6DEE2F04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BS.Infrastructure", "BS.Infrastructure\BS.Infrastructure.csproj", "{DEBDAAF2-4836-4DF5-91A9-12FB6DEE2F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS.Domain", "BS.Domain\BS.Domain.csproj", "{EC0873DA-F6D0-43A8-9D36-D1A8C6915B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BS.Domain", "BS.Domain\BS.Domain.csproj", "{EC0873DA-F6D0-43A8-9D36-D1A8C6915B43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS.App.Implementation", "BS.App.Implementation\BS.App.Implementation.csproj", "{A5EB186F-7D14-4F09-AA76-71F6BFE7C2C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BS.App.Implementation", "BS.App.Implementation\BS.App.Implementation.csproj", "{A5EB186F-7D14-4F09-AA76-71F6BFE7C2C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS.App.Interfaces", "BS.App.Interfaces\BS.App.Interfaces.csproj", "{E5B515B9-194B-4265-B77A-76B12FABBF3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BS.App.Interfaces", "BS.App.Interfaces\BS.App.Interfaces.csproj", "{E5B515B9-194B-4265-B77A-76B12FABBF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BS.Utilities", "BS.Utilities\BS.Utilities.csproj", "{C967FF83-68D1-4303-B962-23AF7CF0D32D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{E5B515B9-194B-4265-B77A-76B12FABBF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5B515B9-194B-4265-B77A-76B12FABBF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5B515B9-194B-4265-B77A-76B12FABBF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C967FF83-68D1-4303-B962-23AF7CF0D32D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C967FF83-68D1-4303-B962-23AF7CF0D32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C967FF83-68D1-4303-B962-23AF7CF0D32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C967FF83-68D1-4303-B962-23AF7CF0D32D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{EC0873DA-F6D0-43A8-9D36-D1A8C6915B43} = {AE764B6E-79E0-45B2-9511-BD499B26D363}
 		{A5EB186F-7D14-4F09-AA76-71F6BFE7C2C1} = {E3D83174-DDCA-4241-A4E7-ECAA965F3A9E}
 		{E5B515B9-194B-4265-B77A-76B12FABBF3D} = {E3D83174-DDCA-4241-A4E7-ECAA965F3A9E}
+		{C967FF83-68D1-4303-B962-23AF7CF0D32D} = {E0230FC5-FCBF-4E07-B36B-A91A645DB1C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F61A1CA-E089-4EA0-8C0E-07ED6AAF15BA}
