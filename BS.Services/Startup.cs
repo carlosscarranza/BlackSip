@@ -14,12 +14,12 @@ namespace BS.Services
 {
     public class Startup
     {
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -28,12 +28,10 @@ namespace BS.Services
        
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
-            {
-                builder.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader();
-            }));
+            services.AddCors(o => o.AddPolicy(MyAllowSpecificOrigins, builder =>
+                {
+                    builder.WithOrigins("*").WithHeaders("*").WithMethods("*").WithExposedHeaders("*");
+                }));
 
             //Create your Auto-fac Container
             var containerBuilder = new ContainerBuilder();
@@ -59,6 +57,9 @@ namespace BS.Services
                 app.UseHsts();
 
             app.UseHttpsRedirection();
+
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseMvc();
         }
     }

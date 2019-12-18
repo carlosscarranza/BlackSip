@@ -1,1 +1,11 @@
-<p>sitemenu works!</p>
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container">
+        <ul class="nav navbar-nav" routerLinkActive="active">
+            <li *ngFor="let item of jsonsitemenu" class="nav-item">
+                <a class="nav-link" routerLink="{{item.url}}" ng-include="'treeMenu'">
+                {{item.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

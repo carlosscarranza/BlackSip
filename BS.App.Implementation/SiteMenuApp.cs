@@ -10,7 +10,7 @@ namespace BS.App.Implementation
     {
         public IEnumerable<SiteMenu> GetMenu()
         {
-            return UnitOfWork.I.SiteMenuRepository.GetAll().ToList();
+            return UnitOfWork.I.SiteMenuRepository.GetAll().ToList().Where(x => x.ParentId == 0);
         }
     }
 }

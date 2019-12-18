@@ -18,16 +18,22 @@ namespace BS.Services.Controllers
             _visitanteApp = visitanteApp;
         }
 
+        //Agrego un visitante
+        [HttpPost]
         public int CreateVisitante(Visitante visitante)
         {
             return _visitanteApp.Create(visitante);
         }
 
+        //Obtengo los visitante ya procesados
+        [HttpGet]
         public List<Visitante> GetVisitantesProcesados()
         {
             return _visitanteApp.GetVisitantesProcesados();
         }
 
+        //Activo el proceso para validar a los visitantes
+        [HttpPost]
         public void ProcessVisitors()
         {
             DateTime localDateTime = DateTime.Now;

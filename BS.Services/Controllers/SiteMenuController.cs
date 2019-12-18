@@ -1,4 +1,7 @@
-﻿using BS.App.Interfaces;
+﻿using System.Collections.Generic;
+using BS.App.Interfaces;
+using BS.Domain;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BS.Services.Controllers
