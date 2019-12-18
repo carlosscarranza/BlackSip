@@ -2,6 +2,7 @@
 using BS.Domain;
 using BS.Infrastructure;
 
+
 namespace BS.App.Implementation
 {
     public class VisitanteApp : IVisitanteApp
