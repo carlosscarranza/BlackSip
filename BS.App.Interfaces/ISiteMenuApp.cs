@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BS.Domain;
+﻿using BS.Domain;
+using System.Collections.Generic;
 
 namespace BS.App.Interfaces
 {

@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using BS.Domain;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace BS.Infrastructure
 {
     public class GenericRepository<TEntity> where TEntity : class
     {
-        private readonly BlackSipEntities _context;
+        private readonly BlackSipContext _context;
         private readonly DbSet<TEntity> _dbSet;
 
-        public GenericRepository(BlackSipEntities context)
+        public GenericRepository(BlackSipContext context)
         {
             _context = context;
             _dbSet = context.Set<TEntity>();
@@ -25,7 +24,7 @@ namespace BS.Infrastructure
             _dbSet.Add(entity);
         }
 
-        public TEntity CreateReturn(TEntity entity)
+        public EntityEntry<TEntity> CreateReturn(TEntity entity)
         {
             return _dbSet.Add(entity);
         }
@@ -52,7 +51,7 @@ namespace BS.Infrastructure
 
         public virtual IQueryable<TEntity> SelectQuery(string query, params object[] parameters)
         {
-            return _dbSet.SqlQuery(query, parameters).AsQueryable();
+            return _context.Set<TEntity>().FromSql(query, parameters).AsQueryable();
         }
 
         public IQueryable<TEntity> Filter(Expression<Func<TEntity, bool>> expression)
@@ -62,7 +61,8 @@ namespace BS.Infrastructure
 
         public void Update(TEntity entity)
         {
-            _context.Set<TEntity>().AddOrUpdate(entity);
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         public void Delete(TEntity entity)
@@ -77,18 +77,9 @@ namespace BS.Infrastructure
             if (entity != null) Delete(entity);
         }
 
-        public List<TEntity> SqlQuery<TEntity>(string sql, params object[] parameters)
+        public IEnumerable<TEntity> SqlQuery(string sql, params object[] parameters)
         {
-            try
-            {
-                return _context.Database.SqlQuery<TEntity>(sql, parameters).ToList();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-
-            return null;
+            return _context.Set<TEntity>().FromSql(sql, parameters).ToList();
         }
 
         public TEntity Find(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderby = null, string includeProperties = "")

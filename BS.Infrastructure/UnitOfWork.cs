@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using BS.Domain;
+﻿using BS.Domain;
+using System;
 
 namespace BS.Infrastructure
 {
@@ -8,9 +7,9 @@ namespace BS.Infrastructure
     {
         public UnitOfWork()
         {
-            this._context = new BlackSipEntities();
+            this._context = new BlackSipContext();
         }
-        private readonly BlackSipEntities _context;
+        private readonly BlackSipContext _context;
 
         public static UnitOfWork I { get; } = new UnitOfWork();
 
@@ -28,9 +27,7 @@ namespace BS.Infrastructure
 
         public int SaveChanges()
         {
-            int response = this._context.SaveChanges();
-            _context.Database.Connection.Close();
-            return response;
+            return this._context.SaveChanges();
         }
     }
 }
