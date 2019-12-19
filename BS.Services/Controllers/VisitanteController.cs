@@ -33,7 +33,7 @@ namespace BS.Services.Controllers
         }
 
         //Activo el proceso para validar a los visitantes
-        [HttpPost]
+        [HttpGet]
         public void ProcessVisitors()
         {
             DateTime localDateTime = DateTime.Now;

@@ -1,9 +1,31 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { IVisitante } from './visitante';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class VisitanteService {
 
-  constructor() { }
+  private baseUrl = "https://localhost:44389";
+  private controller = "/api/visitante/";
+
+  private apiUrlCreateVisitante = this.baseUrl + this.controller + "CreateVisitante";
+  private apiUrlGetVisitantesProcesados = this.baseUrl + this.controller + "GetVisitantesProcesados";
+  private apiUrlProcessVisitors = this.baseUrl + this.controller + "ProcessVisitors";
+
+  constructor(private http: HttpClient) { }
+  
+  createVisitante(visitante: IVisitante): Observable<number> {
+    return this.http.post<number>(this.apiUrlCreateVisitante, visitante);
+  }
+
+  getVisitantesProcesados(): Observable<IVisitante[]> {
+    return this.http.get<IVisitante[]>(this.apiUrlGetVisitantesProcesados);
+  }
+
+  processVisitors(): Observable<void> {
+    return this.http.get<void>(this.apiUrlProcessVisitors);
+  }
+
+
 }

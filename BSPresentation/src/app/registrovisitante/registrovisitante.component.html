@@ -1,0 +1,28 @@
+<h1>Reporte Visitantes</h1>
+
+<br><b>
+    <p *ngIf="!(visitante && visitante.length)" align="center">No existen registros para mostrar</p>
+  </b>
+  
+  <table class="table" *ngIf="visitante && visitante.length">
+    <thead>
+      <tr>
+        <th>Cedula</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vi of visitante">
+        <td>{{vi.cedula}}</td>
+        <td>{{vi.nombre}}</td>
+        <td>{{vi.email}}</td>
+        <td>{{vi.telefono}}</td>
+        <td>
+          <button class="btn btn-default" (click)="openDialog($event, vi.id)">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
