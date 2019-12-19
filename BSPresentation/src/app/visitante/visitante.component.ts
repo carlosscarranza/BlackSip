@@ -31,8 +31,6 @@ export class VisitanteComponent implements OnInit {
 
       this.visitaneService.createVisitante(visitante).subscribe(profesor => this.onSaveSuccess(),
       error => console.error(error));
-
-      this.visitaneService.processVisitors().subscribe();
   }
 
   onSaveSuccess() {

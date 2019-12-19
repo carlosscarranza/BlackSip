@@ -11,7 +11,6 @@ export class VisitanteService {
 
   private apiUrlCreateVisitante = this.baseUrl + this.controller + "CreateVisitante";
   private apiUrlGetVisitantesProcesados = this.baseUrl + this.controller + "GetVisitantesProcesados";
-  private apiUrlProcessVisitors = this.baseUrl + this.controller + "ProcessVisitors";
 
   constructor(private http: HttpClient) { }
   
@@ -22,10 +21,4 @@ export class VisitanteService {
   getVisitantesProcesados(): Observable<IVisitante[]> {
     return this.http.get<IVisitante[]>(this.apiUrlGetVisitantesProcesados);
   }
-
-  processVisitors(): Observable<void> {
-    return this.http.get<void>(this.apiUrlProcessVisitors);
-  }
-
-
 }

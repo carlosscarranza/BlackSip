@@ -31,19 +31,5 @@ namespace BS.Services.Controllers
         {
             return _visitanteApp.GetVisitantesProcesados();
         }
-
-        //Activo el proceso para validar a los visitantes
-        [HttpGet]
-        public void ProcessVisitors()
-        {
-            DateTime localDateTime = DateTime.Now;
-            MyScheduler.IntervalInMinutes(localDateTime.Hour, localDateTime.Minute + 2, 1,
-                Procesar);
-        }
-
-        public void Procesar()
-        {
-            _visitanteApp.ProcessVisitors();
-        }
     }
 }
