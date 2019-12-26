@@ -7,6 +7,7 @@ import { IVisitante } from './visitante';
 export class VisitanteService {
 
   private baseUrl = "https://localhost:44389";
+  //private baseUrl = "http://localhost:60492";
   private controller = "/api/visitante/";
 
   private apiUrlCreateVisitante = this.baseUrl + this.controller + "CreateVisitante";

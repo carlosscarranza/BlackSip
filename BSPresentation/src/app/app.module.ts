@@ -11,14 +11,17 @@ import { SitemenuComponent } from './sitemenu/sitemenu.component';
 import { SitemenuService } from './sitemenu/sitemenu.service';
 import { VisitanteService } from './visitante/visitante.service';
 import { RegistrovisitanteComponent } from './registrovisitante/registrovisitante.component';
-
+import { MenugijgoComponent } from './menugijgo/menugijgo.component';
+import { TreeComponent } from 'gijgo-angular-wrappers';
 
 @NgModule({
   declarations: [
     AppComponent,
     VisitanteComponent,
     SitemenuComponent,
-    RegistrovisitanteComponent
+    RegistrovisitanteComponent,
+    MenugijgoComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule,
